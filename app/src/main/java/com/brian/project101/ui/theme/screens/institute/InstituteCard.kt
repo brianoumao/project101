@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -32,7 +31,7 @@ import com.brian.project101.R
 
 @Composable
 fun InstituteCard(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     collegeName: String,
     rating: String,
     reviews: String,
@@ -42,25 +41,34 @@ fun InstituteCard(
     image: Int,
 ) {
     Card(
-        modifier = modifier.height(220.dp).fillMaxWidth().fillMaxSize().shadow(elevation = 8.dp, shape = RoundedCornerShape(12.dp)),
+        modifier = modifier
+            .height(220.dp)
+            .fillMaxWidth()
+            .shadow(elevation = 8.dp, shape = RoundedCornerShape(12.dp)),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(Color.White)
     ) {
         Row(modifier = modifier.padding(15.dp)) {
             Column(
-                modifier = modifier.height(190.dp).width(160.dp).clip(shape = RoundedCornerShape(12.dp)).background(backgroundColor)
+                modifier = Modifier
+                    .height(190.dp)
+                    .width(160.dp)
+                    .clip(shape = RoundedCornerShape(12.dp))
+                    .background(backgroundColor)
             ) {
                 Image(
-                    modifier = modifier.size(190.dp).padding(5.dp),
+                    modifier = Modifier
+                        .size(190.dp)
+                        .padding(5.dp),
                     painter = painterResource(id = image),
-                    contentDescription = "college_first"
+                    contentDescription = "college_image"
                 )
             }
             Column {
                 Text(
                     text = collegeName,
                     fontSize = 18.sp,
-                    modifier = modifier.padding(top = 7.dp, start = 7.dp),
+                    modifier = Modifier.padding(top = 7.dp, start = 7.dp),
                     fontFamily = FontFamily.Cursive,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.Black
@@ -68,36 +76,24 @@ fun InstituteCard(
                 Row(
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = modifier.padding(start = 7.dp, top = 3.dp)
+                    modifier = Modifier.padding(start = 7.dp, top = 3.dp)
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.s),
-                        contentDescription = "rating",
-                        modifier = modifier.size(18.dp).padding(2.dp),
-                        tint = Color.Green
-                    )
-                    Icon(
-                        painter = painterResource(id = R.drawable.s),
-                        contentDescription = "rating",
-                        modifier = modifier.size(18.dp).padding(2.dp),
-                        tint = Color.Green
-                    )
-                    Icon(
-                        painter = painterResource(id = R.drawable.s),
-                        contentDescription = "rating",
-                        modifier = modifier.size(18.dp).padding(2.dp),
-                        tint = Color.Green
-                    )
-                    Icon(
-                        painter = painterResource(id = R.drawable.s),
-                        contentDescription = "rating",
-                        modifier = modifier.size(18.dp).padding(2.dp),
-                        tint = Color.Green
-                    )
+                    repeat(4) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.s),
+                            contentDescription = "rating_star",
+                            modifier = Modifier
+                                .size(18.dp)
+                                .padding(2.dp),
+                            tint = Color.Green
+                        )
+                    }
                     Icon(
                         painter = painterResource(id = R.drawable.starr),
-                        contentDescription = "rating",
-                        modifier = modifier.size(18.dp).padding(2.dp),
+                        contentDescription = "half_star",
+                        modifier = Modifier
+                            .size(18.dp)
+                            .padding(2.dp),
                         tint = Color.Green
                     )
                     Text(
@@ -105,10 +101,11 @@ fun InstituteCard(
                         fontSize = 10.sp,
                         fontFamily = FontFamily.SansSerif,
                         fontWeight = FontWeight.Normal,
-                        color = Color.DarkGray
+                        color = Color.DarkGray,
+                        modifier = Modifier.padding(start = 5.dp)
                     )
                 }
-                Column(modifier = modifier.padding(start = 10.dp, top = 2.dp)) {
+                Column(modifier = Modifier.padding(start = 10.dp, top = 2.dp)) {
                     Text(
                         text = subject,
                         fontSize = 18.sp,
@@ -132,8 +129,16 @@ fun InstituteCard(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun InstituteCardPreview() {
-   
+    InstituteCard(
+        collegeName = "Victory College",
+        rating = "6.5",
+        reviews = "1234",
+        subject = "Bio Science",
+        description = "A highly reputed institution with a strong focus on practical knowledge and research.",
+        backgroundColor = Color.LightGray,
+        image = R.drawable.s,
+    )
 }

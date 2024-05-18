@@ -3,10 +3,12 @@ package com.brian.project101.navigation
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.brian.project101.R
 import com.brian.project101.ui.theme.screens.main.MainScreen
 import com.brian.project101.ui.theme.screens.home.HomeScreen
 import com.brian.project101.ui.theme.screens.institute.InstituteCard
@@ -40,22 +42,15 @@ fun AppNavHost(modifier: Modifier =Modifier,
              Intentscreen(navController) }
         composable(ROUTE_STUDENT){
              InstituteCard(
-                 modifier ,
-                 collegeName = String.toString(),
-                 rating = String.toString(),
-                 reviews = String.toString(),
-                 subject = String.toString(),
-                 description = String.toString(),
-                 backgroundColor = (MaterialTheme.colorScheme.background),
-                 image = hashCode()
+                 collegeName = "Victory College",
+                 rating = "6.5",
+                 reviews = "1234",
+                 subject = "Bio science",
+                 description = "A highly reputed institution with a strong focus on practical knowledge and research.",
+                 backgroundColor = Color.LightGray,
+                 image = R.drawable.s
              )}
         composable(ROUTE_TEACHER) {
-             CardTeachers(
-                 modifier,
-                 title = String.toString(),
-                 subject = String.toString(),
-                 backgroundColor= (MaterialTheme.colorScheme.background),
-                 image = hashCode()
-             ) }
+             CardTeachers(title = "Veez Cape", subject = "Bio Science", backgroundColor = Color.LightGray, image = R.drawable.s) }
     }
 }

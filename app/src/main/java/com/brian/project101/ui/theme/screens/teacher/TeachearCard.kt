@@ -22,10 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.brian.project101.R
 
 @Composable
 fun CardTeachers(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     title: String,
     subject: String,
     backgroundColor: Color,
@@ -82,5 +83,5 @@ fun CardTeachers(
 @Composable
 @Preview
 fun CardTeachersPreview() {
-
+    CardTeachers(title = "Veez Cape", subject = "Bio Science", backgroundColor = Color.LightGray, image = R.drawable.s)
 }

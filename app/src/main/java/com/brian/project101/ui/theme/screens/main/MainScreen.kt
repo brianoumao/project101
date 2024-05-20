@@ -54,8 +54,7 @@ import com.brian.project101.ui.theme.screens.teacher.CardTeachers
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(navController: NavHostController) {
-
+fun MainScreen(navController: NavHostController){
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Row() {
             Column {
@@ -67,7 +66,6 @@ fun MainScreen(navController: NavHostController) {
                     fontSize = 32.sp,
                     color = Color.Black,
                 )
-
                 Text(
                     modifier = Modifier.padding(start = 21.dp),
                     text = "Brian Ouma",
@@ -75,9 +73,7 @@ fun MainScreen(navController: NavHostController) {
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 20.sp,
                     color = Color.DarkGray
-                )
-            }
-
+                )}
             Image(
                 painter = painterResource(id = R.drawable.person),
                 contentDescription = "profile image",

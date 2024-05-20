@@ -73,7 +73,7 @@ fun HomeScreen(navController: NavHostController) {
                 enabled = true
             ) {
                 Text(
-                    text = "Sign up",
+                    text = "Overall",
                     color = Color.White,
                     fontFamily = FontFamily.Cursive,
                     fontSize = 18.sp,

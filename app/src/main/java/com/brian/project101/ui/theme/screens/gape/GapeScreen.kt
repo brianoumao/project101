@@ -39,13 +39,13 @@ fun GapeScreen(navController: NavHostController) {
         Button(onClick = {
             navController.navigate(ROUTE_STUDENT)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Student")
+            Text(text = "Rating and Reviews")
         }
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = {
             navController.navigate(ROUTE_TEACHER)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Teacher")
+            Text(text = "HeadMaster")
         }
     }
 }

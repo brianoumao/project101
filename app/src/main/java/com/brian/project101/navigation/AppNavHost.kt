@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.brian.project101.R
+import com.brian.project101.ui.theme.screens.call.Callscreen
 import com.brian.project101.ui.theme.screens.main.MainScreen
 import com.brian.project101.ui.theme.screens.home.HomeScreen
 import com.brian.project101.ui.theme.screens.institute.InstituteCard
@@ -40,6 +41,9 @@ fun AppNavHost(modifier: Modifier =Modifier,
              GapeScreen(navController) }
         composable (ROUTE_INTENT){
              Intentscreen(navController) }
+        composable(ROUTE_CALL){
+            Callscreen(navController)
+        }
         composable(ROUTE_STUDENT){
              InstituteCard(
                  collegeName = "Victory College",

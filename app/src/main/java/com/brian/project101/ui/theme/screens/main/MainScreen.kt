@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -48,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.brian.project101.R
+import com.brian.project101.navigation.ROUTE_CALL
 import com.brian.project101.navigation.ROUTE_INTENT
 import com.brian.project101.ui.theme.screens.institute.InstituteCard
 import com.brian.project101.ui.theme.screens.teacher.CardTeachers
@@ -108,7 +110,7 @@ fun MainScreen(navController: NavHostController){
                 textStyle = TextStyle(color = Color.Black),
                 placeholder = {
                     Text(
-                        text = "Search your teacher",
+                        text = "Call for More Information",
                         fontFamily = FontFamily.Cursive,
                         fontWeight = FontWeight.SemiBold,
                         fontSize = 14.sp,
@@ -124,7 +126,9 @@ fun MainScreen(navController: NavHostController){
                 singleLine = true,
                 trailingIcon = {
                     Button(
-                        onClick = { /* ... */},
+                        onClick = {
+                            navController.navigate(ROUTE_CALL)
+                        },
                         colors = ButtonDefaults.buttonColors(),
                         modifier = Modifier.padding(start = 10.dp, end = 10.dp),
                         shape =
@@ -136,7 +140,7 @@ fun MainScreen(navController: NavHostController){
                         )
                     ) {
                         Icon(
-                            Icons.Filled.Search,
+                            Icons.Filled.Call,
                             contentDescription = "Search",
                             modifier = Modifier.size(30.dp),
                             tint = Color.White

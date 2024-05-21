@@ -32,11 +32,11 @@ fun AppNavHost(modifier: Modifier =Modifier,
              HomeScreen(navController) }
         composable(ROUTE_DETAILS){
              MainScreen(navController) }
-        composable(ROUTE_CALL){
-            Callscreen(navController) }
-        composable(ROUTE_WELCOME){
-            WelcomeScreen(navController) }
         composable(ROUTE_APPLICATION){
             ApplicationScreen(navController) }
+        composable(ROUTE_WELCOME){
+            WelcomeScreen(navController) }
+        composable(ROUTE_CALL){
+            Callscreen(navController) }
      }
 }

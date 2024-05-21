@@ -65,7 +65,7 @@ fun ApplicationScreen(navController: NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         OutlinedTextField(
             value = productQuantity,
@@ -74,14 +74,14 @@ fun ApplicationScreen(navController: NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = productPrice,
             onValueChange = { productPrice = it },
             label = { Text(text = "Email Address") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = productPrice,
             onValueChange = { productPrice = it },
@@ -89,14 +89,21 @@ fun ApplicationScreen(navController: NavHostController) {
                 ) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+        OutlinedTextField(
+            value = productPrice,
+            onValueChange = { productPrice = it },
+            label = { Text(text = "Country(location)") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+        )
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = productPrice,
             onValueChange = { productPrice = it },
             label = { Text(text = "Do you have a Visa(YES or NO )") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = productPrice,
             onValueChange = { productPrice = it },
@@ -106,7 +113,7 @@ fun ApplicationScreen(navController: NavHostController) {
 
 
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Button(onClick = {
             //-----------WRITE THE SAVE LOGIC HERE---------------//
@@ -119,7 +126,7 @@ fun ApplicationScreen(navController: NavHostController) {
         }) {
             Text(text = "Apply")
         }
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         //---------------------IMAGE PICKER START-----------------------------------//
 
@@ -161,7 +168,7 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context, navController: 
                 )
             }
 
-            Spacer(modifier = Modifier.height(20.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             Button(onClick = {
                 //-----------WRITE THE UPLOAD LOGIC HERE---------------//

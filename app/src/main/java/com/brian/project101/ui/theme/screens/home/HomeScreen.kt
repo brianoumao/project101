@@ -26,9 +26,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.brian.project101.R
 import com.brian.project101.navigation.ROUTE_DETAILS
-import com.brian.project101.navigation.ROUTE_GAPE
-import com.brian.project101.navigation.ROUTE_LOGIN
-import com.brian.project101.navigation.ROUTE_REGISTER
 
 @Composable
 fun HomeScreen(navController: NavHostController) {
@@ -53,7 +50,7 @@ fun HomeScreen(navController: NavHostController) {
             )
 
             Text(
-                text = "Please Sign in to view personalized recommendations",
+                text = "Please Continue to view personalized recommendations",
                 fontFamily = FontFamily.Cursive,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Center,
@@ -65,7 +62,7 @@ fun HomeScreen(navController: NavHostController) {
         Column(modifier = Modifier.padding(top = 30.dp).align(Alignment.CenterHorizontally)) {
             Button(
                 onClick = {
-                    navController.navigate(ROUTE_GAPE)
+                    navController.navigate(ROUTE_DETAILS)
                 },
                 colors = ButtonDefaults.buttonColors(),
                 shape = RoundedCornerShape(12.dp),
@@ -73,7 +70,7 @@ fun HomeScreen(navController: NavHostController) {
                 enabled = true
             ) {
                 Text(
-                    text = "Overall",
+                    text = "Go to Home",
                     color = Color.White,
                     fontFamily = FontFamily.Cursive,
                     fontSize = 18.sp,
@@ -86,11 +83,9 @@ fun HomeScreen(navController: NavHostController) {
                     Modifier.align(Alignment.CenterHorizontally).padding(top = 30.dp).clickable(
                         indication = null,
                         interactionSource = remember { MutableInteractionSource() }
-                    ) {
-                        navController.navigate(ROUTE_DETAILS)
-                    },
-                    text = "Skip",
-                    fontFamily = FontFamily.Cursive,
+                    ) {},
+                    text = "Welcome",
+                    fontFamily = FontFamily.SansSerif,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Normal,
                     color = Color.DarkGray

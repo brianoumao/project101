@@ -1,4 +1,4 @@
-package com.brian.project101.ui.theme.screens.institute
+package com.brian.project101.ui.theme.screens.cards
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -132,13 +132,5 @@ fun InstituteCard(
 @Preview(showBackground = true)
 @Composable
 fun InstituteCardPreview() {
-    InstituteCard(
-        collegeName = "Victory College",
-        rating = "6.5",
-        reviews = "1234",
-        subject = "Bio Science",
-        description = "A highly reputed institution with a strong focus on practical knowledge and research.",
-        backgroundColor = Color.LightGray,
-        image = R.drawable.s,
-    )
+   // InstituteCard()
 }

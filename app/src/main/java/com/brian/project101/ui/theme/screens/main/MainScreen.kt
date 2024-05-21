@@ -19,7 +19,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -49,10 +48,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.brian.project101.R
+import com.brian.project101.navigation.ROUTE_APPLICATION
 import com.brian.project101.navigation.ROUTE_CALL
-import com.brian.project101.navigation.ROUTE_INTENT
-import com.brian.project101.ui.theme.screens.institute.InstituteCard
-import com.brian.project101.ui.theme.screens.teacher.CardTeachers
+import com.brian.project101.ui.theme.screens.cards.CardTeachers
+import com.brian.project101.ui.theme.screens.cards.InstituteCard
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -84,9 +84,7 @@ fun MainScreen(navController: NavHostController){
                     .clickable(
                         indication = null,
                         interactionSource = remember { MutableInteractionSource() }
-                    ){
-                        navController.navigate(ROUTE_INTENT)
-                    }
+                    ){}
                     .size(65.dp)
                     .clip(shape = RoundedCornerShape(14.dp))
                     .border(7.dp, Color.White, RoundedCornerShape(14.dp))
@@ -265,7 +263,9 @@ fun MainScreen(navController: NavHostController){
                 Modifier.clickable(
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() }
-                ) {},
+                ) {
+                    navController.navigate(ROUTE_APPLICATION)
+                },
                 collegeName = "Victory College",
                 rating = "4.5",
                 reviews = "413",
@@ -281,7 +281,9 @@ fun MainScreen(navController: NavHostController){
                 Modifier.clickable(
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() }
-                ) {},
+                ) {
+                    navController.navigate(ROUTE_APPLICATION)
+                },
                 collegeName = "New Montana",
                 rating = "4.1",
                 reviews = "354",
@@ -296,7 +298,9 @@ fun MainScreen(navController: NavHostController){
                 Modifier.clickable(
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() }
-                ) {},
+                ) {
+                    navController.navigate(ROUTE_APPLICATION)
+                },
                 collegeName = "Susipwan Institute",
                 rating = "3.0",
                 reviews = "745",

@@ -18,6 +18,7 @@ firebaseAuth = "23.0.0"
 firebaseDatabaseKtx = "21.0.0"
 viewpager2 = "1.0.0"
 material = "1.12.0"
+firebaseStorageKtx = "21.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,6 +44,7 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewpager2" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

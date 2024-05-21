@@ -1,4 +1,4 @@
-package com.brian.project101.ui.theme.screens.teacher
+package com.brian.project101.ui.theme.screens.cards
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -22,7 +22,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.brian.project101.R
 
 @Composable
 fun CardTeachers(
@@ -83,5 +82,5 @@ fun CardTeachers(
 @Composable
 @Preview
 fun CardTeachersPreview() {
-    CardTeachers(title = "Veez Cape", subject = "Bio Science", backgroundColor = Color.LightGray, image = R.drawable.s)
+    //CardTeachers()
 }

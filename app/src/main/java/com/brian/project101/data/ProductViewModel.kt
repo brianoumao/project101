@@ -30,9 +30,9 @@ class productviewmodel(private var navController: NavHostController, var context
     }
 
 
-    fun saveProduct(productName: String, productQuantity: String, productPrice: String) {
+    fun saveProduct(productName: String, productQuantity: String, productPrice: String, productAddress: String, productLocation: String, productRequest: String, productNumber: String) {
         val id = System.currentTimeMillis().toString()
-        val productData = Product(productName, productQuantity, productPrice, id)
+        val productData = Product(productName, productQuantity, productPrice, productAddress, productLocation, productRequest, productNumber, id)
         val productRef = FirebaseDatabase.getInstance().getReference()
             .child("Products/$id")
         progress.show()
@@ -86,15 +86,15 @@ class productviewmodel(private var navController: NavHostController, var context
         }
     }
 
-    fun updateProduct(name: String, quantity: String, price: String, id: String) {
+    fun updateProduct(name: String, quantity: String, price: String,address: String,location:String,request:String,number:String, id: String) {
         val updateRef = FirebaseDatabase.getInstance().getReference()
             .child("Products/$id")
         progress.show()
-        val updateData = Product(name, quantity, price, id)
+        val updateData = Product(name, quantity, price, address ,location,request,number, id)
         updateRef.setValue(updateData).addOnCompleteListener {
-            progress.dismiss()
-            if (it.isSuccessful) {
-                Toast.makeText(context, "Update successful", Toast.LENGTH_SHORT).show()
+           progress.dismiss()
+           if (it.isSuccessful) {
+               Toast.makeText(context, "Update successful", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, it.exception!!.message, Toast.LENGTH_SHORT).show()
             }

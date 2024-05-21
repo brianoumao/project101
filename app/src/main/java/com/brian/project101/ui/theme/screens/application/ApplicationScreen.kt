@@ -57,6 +57,10 @@ fun ApplicationScreen(navController: NavHostController) {
         var productName by remember { mutableStateOf(TextFieldValue("")) }
         var productQuantity by remember { mutableStateOf(TextFieldValue("")) }
         var productPrice by remember { mutableStateOf(TextFieldValue("")) }
+        var productAddress by remember { mutableStateOf(TextFieldValue("")) }
+        var productLocation by remember { mutableStateOf(TextFieldValue("")) }
+        var productRequest by remember { mutableStateOf(TextFieldValue(""))}
+        var productNumber by remember { mutableStateOf(TextFieldValue("")) }
 
         OutlinedTextField(
             value = productName,
@@ -76,8 +80,8 @@ fun ApplicationScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
-            value = productPrice,
-            onValueChange = { productPrice = it },
+            value = productAddress,
+            onValueChange = { productAddress = it },
             label = { Text(text = "Email Address") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
@@ -91,22 +95,22 @@ fun ApplicationScreen(navController: NavHostController) {
         )
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
-            value = productPrice,
-            onValueChange = { productPrice = it },
+            value = productLocation,
+            onValueChange = { productLocation = it },
             label = { Text(text = "Country(location)") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
-            value = productPrice,
-            onValueChange = { productPrice = it },
+            value = productRequest,
+            onValueChange = { productRequest = it },
             label = { Text(text = "Do you have a Visa(YES or NO )") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
-            value = productPrice,
-            onValueChange = { productPrice = it },
+            value = productNumber,
+            onValueChange = { productNumber = it },
             label = { Text(text = "Guardians Number") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
         )
@@ -119,7 +123,7 @@ fun ApplicationScreen(navController: NavHostController) {
             //-----------WRITE THE SAVE LOGIC HERE---------------//
             val productRepository = productviewmodel(navController,context)
             productRepository.saveProduct(productName.text.trim(),productQuantity.text.trim(),
-                productPrice.text)
+                productPrice.text.trim(),productAddress.text.trim(),productLocation.text.trim(), productRequest.text.trim(),productNumber.text)
             navController.navigate(ROUTE_WELCOME)
 
 
